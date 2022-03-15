@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useContext } from 'react'
+import AuthContext from './Context/AuthContext';
+import NavBar from "./NavBar/NavBar";
+import './index.css'
 function App() {
+  
+  let { authTokens, logoutUser } = useContext(AuthContext)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <NavBar />
+    <div className='main'>
+    { authTokens ? 
+      (
+        <div>
+          <p>Congratulations You are logged in!</p>
+          <button onClick={logoutUser} >Logout</button>
+        </div>
+        ) : 
+      (<p>Please Sign in.</p>)
+      }
+    
     </div>
+    </>
   );
 }
 
