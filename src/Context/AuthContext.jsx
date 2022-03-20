@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState} from "react";
 import { useNavigate } from "react-router-dom";
 
 
@@ -13,12 +13,10 @@ export const AuthProvider = ({children}) => {
     let [authTokens, setAuthTokens] = useState(()=>localStorage.getItem('authTokens') ? (JSON.parse(localStorage.getItem('authTokens'))) : (null))
     let [userName, setUserName] = useState('')
     let [userProfile, setUserProfile] = useState('')
-    // let [loading, setLoading] = useState(true)
 
 
     let LoginUrl = `${process.env.REACT_APP_API_DOMAIN}/auth/jwt/create`
     let LoggedUserUrl = `${process.env.REACT_APP_API_DOMAIN}/auth/users/me`
-    // let RefreshTokenUrl = `${process.env.REACT_APP_API_DOMAIN}/auth/jwt/refresh`
 
 
     let loginUser = async(e) =>{
@@ -81,23 +79,6 @@ export const AuthProvider = ({children}) => {
     }
 
 
-    // let updateToken = async () => {
-    //     let response = await fetch(RefreshTokenUrl, {
-    //         method:'POST',
-    //         headers:{
-    //             'Content-type':'application/json'
-    //         },
-    //         body:JSON.stringify({'refresh':authTokens.refresh})
-    //     })
-
-    //     let data = await response.json()
-
-    //     if (response.status === 200){
-    //         setAuthTokens(data)
-    //         localStorage.setItem('authTokens', JSON.stringify(data))
-    //     }else{
-    //         logoutUser()
-    //     }
 
     let contextData = {
         userProfile:userProfile,
