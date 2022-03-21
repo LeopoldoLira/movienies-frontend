@@ -1,5 +1,10 @@
 .main-movie-container{
     padding: 15vh 0;
+    background: rgb(36,37,38);
+background: -moz-linear-gradient(180deg, rgba(36,37,38,1) 0%, rgba(1,0,17,1) 100%);
+background: -webkit-linear-gradient(180deg, rgba(36,37,38,1) 0%, rgba(1,0,17,1) 100%);
+background: linear-gradient(180deg, rgba(36,37,38,1) 0%, rgba(1,0,17,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#242526",endColorstr="#010011",GradientType=1);
 }
 
 .movie-container{
@@ -12,9 +17,10 @@
 
 .movie-card {
     width: 100%;
+    color: white;
 }
 
-.movie-card > img{
+.movie-card > a > img{
     width: 100%;
     height: auto;
     object-fit: cover;

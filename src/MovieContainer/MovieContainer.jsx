@@ -1,5 +1,6 @@
 import './MovieContainer.css'
-import { useEffect, useState } from 'react'
+import { useEffect, useState} from 'react'
+import { Link } from 'react-router-dom'
 
 
 const MovieContainer = () => {
@@ -14,7 +15,7 @@ const MovieContainer = () => {
 
         let homepageMovieUrl = `${process.env.REACT_APP_API_DOMAIN}/api/movie/list`
 
-        let response =  await fetch(homepageMovieUrl,{
+        let response = await fetch(homepageMovieUrl,{
               headers:{
                   'Content-type':'application/json'
               }
@@ -29,7 +30,6 @@ const MovieContainer = () => {
               alert('something went wrong')
           }
       }
-      
 
     return (
         <div className='main-movie-container'>
@@ -37,7 +37,7 @@ const MovieContainer = () => {
             {movie.map((x)=>{
                 return(
                     <div key={x.pk} className='movie-card'>
-                        <img src={x.movie_image} alt="images" />
+                      <Link to={`movie/${x.pk}`}> <img src={x.movie_image} alt="images" /> </Link>
                         <h1>{x.title}</h1>
                         <p>Date: {x.released_date}</p>
                         <p>Genre: {x.genre}</p>

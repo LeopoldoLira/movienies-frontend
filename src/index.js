@@ -6,6 +6,7 @@ import App from './App';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginForm from './Login/LoginForm';
 import SignupForm from './Signup/SignupForm';
+import MovieDetail from './MovieDetail/MovieDetail';
 // import PrivateAuthroute from './utils/PrivateAuthroute';
 import { AuthProvider } from './Context/AuthContext'
 
@@ -17,6 +18,7 @@ ReactDOM.render(
         <Route path='/' element={ <App /> } exact />
         <Route path='login' element={ /*<PrivateAuthroute>*/<LoginForm />/*</PrivateAuthroute>*/ } />
         <Route path='signup' element={ <SignupForm /> } />
+        <Route path='movie/:pk' element={<MovieDetail />} />
     </Routes>
     </AuthProvider>
     </BrowserRouter>

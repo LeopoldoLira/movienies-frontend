@@ -18,7 +18,6 @@ export const AuthProvider = ({children}) => {
     let LoginUrl = `${process.env.REACT_APP_API_DOMAIN}/auth/jwt/create`
     let LoggedUserUrl = `${process.env.REACT_APP_API_DOMAIN}/auth/users/me`
 
-
     let loginUser = async(e) =>{
         e.preventDefault()
 

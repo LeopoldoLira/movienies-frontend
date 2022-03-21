@@ -55,15 +55,13 @@ const NavBar = () => {
                     <div className='user-container'>
                         <p id='login-btn'>Hello {JSON.parse(userNameProfile)}</p>
                         <div className='profile-picture-container'>
-                         <img src='imgs/defaultUser.jpg' alt='Profile'/>
-                        </div>
+                        <img src={`${process.env.PUBLIC_URL}/imgs/defaultUser.jpg`} alt='Profile'/>
+                    </div>
                         <NavItem icon = {< CaretIcon/>} >
                             <DropdownMenu/>
                         </NavItem>
                     </div>
-                    ) : (
-                    <Link to='/login' id='login-btn'>Login</Link>
-                    )}
+                    ) : (<Link to='/login' id='login-btn'>Login</Link>)}
                 </div>
         </nav>
     )
