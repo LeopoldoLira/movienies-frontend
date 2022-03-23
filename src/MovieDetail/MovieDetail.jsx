@@ -4,34 +4,33 @@ import NavBar from '../NavBar/NavBar'
 import './MovieDetail.css'
 
 const MovieDetail = () => {
-
-    let [movieDetail, setMovieDetail] = useState([])
+    
+    const {pk} = useParams()
+    const [movieDetail, setMovieDetail] = useState([])
+        
     
     useEffect(()=>{
-        retrieveDetailMovie()
-    },[])
-
-    const {pk} = useParams()
-
-    let retrieveDetailMovie  = async () =>{
-
+        let retrieveDetailMovie  = async () =>{
+        
+            let MovieDetailUrl = `${process.env.REACT_APP_API_DOMAIN}/api/movies/${pk}`
+        
+            let response = await fetch(MovieDetailUrl, {
+                headers:{
+                    'Content-type':'application/json'
+                }
+            })
+            let data = await response.json()
+          
+            if(response.status === 200){
+                setMovieDetail(data)
     
-        let MovieDetailUrl = `${process.env.REACT_APP_API_DOMAIN}/api/movies/${pk}`
-    
-        let response = await fetch(MovieDetailUrl, {
-            headers:{
-                'Content-type':'application/json'
+            }else{
+                alert('something went wrong')
             }
-        })
-        let data = await response.json()
-      
-        if(response.status === 200){
-            setMovieDetail(data)
-
-        }else{
-            alert('something went wrong')
         }
-    }
+        retrieveDetailMovie()
+    },[pk])
+
 
   return (
     <>
