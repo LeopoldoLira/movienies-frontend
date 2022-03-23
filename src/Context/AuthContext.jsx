@@ -11,7 +11,6 @@ export const AuthProvider = ({children}) => {
     let navigate = useNavigate();
 
     let [authTokens, setAuthTokens] = useState(()=>localStorage.getItem('authTokens') ? (JSON.parse(localStorage.getItem('authTokens'))) : (null))
-    let [userName, setUserName] = useState('')
     let [userProfile, setUserProfile] = useState('')
 
 
@@ -26,16 +25,15 @@ export const AuthProvider = ({children}) => {
             headers:{
                 'Content-type':'application/json'
             },
-            body:JSON.stringify({'username':e.target.username.value, 'password':e.target.password.value})
+            body:JSON.stringify({'email':e.target.username.value, 'password':e.target.password.value})
         })
 
         let data = await response.json()
 
         if(response.status === 200){
             setAuthTokens(data)
-            setUserName(data.access)
             localStorage.setItem('authTokens', JSON.stringify(data))
-            localStorage.setItem('user', JSON.stringify({accessToken:data.access}))
+
             await retrieveUserName()
             navigate('/')
         }else{
@@ -43,13 +41,12 @@ export const AuthProvider = ({children}) => {
         }
     }
 
-
     let retrieveUserName = async() =>{
 
         let response = await fetch(LoggedUserUrl ,{
             headers:{
                 'Content-type':'application/json',
-                'Authorization': `Bearer ${JSON.parse(localStorage.getItem('user')).accessToken}`
+                'Authorization': `Bearer ${JSON.parse(localStorage.getItem('authTokens')).access}`
             },
 
         })
@@ -69,10 +66,8 @@ export const AuthProvider = ({children}) => {
 
     let logoutUser = () => {
         setAuthTokens(null)
-        setUserName(null)
         setUserProfile(null)
         localStorage.removeItem('authTokens')
-        localStorage.removeItem('user')
         localStorage.removeItem('username')
         navigate('/')
     }
@@ -81,7 +76,6 @@ export const AuthProvider = ({children}) => {
 
     let contextData = {
         userProfile:userProfile,
-        userName: userName,
         userNameProfile: userNameProfile,
         authTokens:authTokens,
         loginUser:loginUser,
