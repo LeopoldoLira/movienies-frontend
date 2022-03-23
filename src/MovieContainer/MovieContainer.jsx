@@ -13,7 +13,7 @@ const MovieContainer = () => {
 
     let retrieveMovies = async() =>{
 
-        let homepageMovieUrl = `${process.env.REACT_APP_API_DOMAIN}/api/movie/list`
+        let homepageMovieUrl = `${process.env.REACT_APP_API_DOMAIN}/api/movies`
 
         let response = await fetch(homepageMovieUrl,{
               headers:{
@@ -37,10 +37,10 @@ const MovieContainer = () => {
             {movie.map((x)=>{
                 return(
                     <div key={x.pk} className='movie-card'>
-                      <Link to={`movie/${x.pk}`}> <img src={x.movie_image} alt="images" /> </Link>
-                        <h1>{x.title}</h1>
-                        <p>Date: {x.released_date}</p>
-                        <p>Genre: {x.genre}</p>
+                      <Link to={`movie/${x.pk}`}> <img src={x.movie_image} alt="images" /></Link>
+                        <h1>{x.movie_title}</h1>
+                        <p>Date: {x.movie_released_date}</p>
+                        <p>Genre: {x.movie_genre}</p>
                     </div>
                 )
             })}
