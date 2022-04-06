@@ -19,7 +19,7 @@ const LoginForm = () => {
                 <input type='password' name='password' placeholder='••••••' />
                 <input id='submitBtn' type='submit' value='Login' />
             </form>
-            <p>Don't have an account yet? <Link to='/signup'>Sign up</Link> for free!</p>
+            <p className='form-link'>Don't have an account yet? <Link to='/signup' className='form-link'>Sign up</Link> for free!</p>
        </div>
     </div>  
   )

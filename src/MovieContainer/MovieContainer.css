@@ -1,14 +1,10 @@
 .main-movie-container{
     padding: 15vh 0;
-    background: rgb(36,37,38);
-background: -moz-linear-gradient(180deg, rgba(36,37,38,1) 0%, rgba(1,0,17,1) 100%);
-background: -webkit-linear-gradient(180deg, rgba(36,37,38,1) 0%, rgba(1,0,17,1) 100%);
-background: linear-gradient(180deg, rgba(36,37,38,1) 0%, rgba(1,0,17,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#242526",endColorstr="#010011",GradientType=1);
+    background: #3a3b3c;
 }
 
 .movie-container{
-    padding:15vh 5rem;
+    padding: 10vh 5rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-column-gap: 1rem;
@@ -18,6 +14,16 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#242526",endCo
 .movie-card {
     width: 100%;
     color: white;
+    background: #ffffff1a;
+    box-shadow: 0 2px 10px 0 #242526;
+    border-radius: 10px;
+    border: 1px solid #ffffff2e;
+    padding: 1rem 1rem;
+    transition: box-shadow 300ms ease-in-out;
+}
+
+.movie-card:hover {
+    box-shadow: 0 2px 10px 0 var(--text-color);
 }
 
 .movie-card > a > img{
@@ -26,9 +32,16 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#242526",endCo
     object-fit: cover;
     border-radius: 0.5rem;
     cursor: pointer;
-    transition: transform ease-in-out 0.8s;
+    transition: transform ease-in-out 0.5s;
 }
 
-.movie-card > img:hover{
+.movie-card > a > img:hover{
     transform: scale(1.01);
+}
+
+.movie-container-title{
+    color:white;
+    font-size: 3rem;
+    font-weight: 700;
+    padding: 0 10vw;
 }

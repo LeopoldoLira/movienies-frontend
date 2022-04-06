@@ -1,0 +1,80 @@
+.delete-movie-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:fixed;
+    width: 100%;
+    padding-top: 35vh;
+    
+}
+
+.delete-movie-items-container{
+    width: 40%;
+    min-height:30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    animation: appear ease 1s;
+    background: rgba(73, 72, 72, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(230, 111, 111, 0.37);
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-radius: 1rem;
+    color: var(--text-color);
+}
+
+
+.delete-movie-items-container > p {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.delete-movie-buttons-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+
+@keyframes appear{
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity:1;
+    }
+}
+
+#yes-button{
+    padding: 1rem 1.5rem;
+    background-color: #00a31ba4;
+    border-radius: 5rem;
+    color: var(--text-color);
+    font-size: 1.2em;
+    font-weight: 700;
+    transition: transform 0.5s ease-in-out;
+    border: none;
+    cursor: pointer;
+    width: 5rem;
+}
+
+#no-button{
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    background-color: #bb00009a;
+    border-radius: 5rem;
+    color: var(--text-color);
+    font-size: 1.2em;
+    font-weight: 700;
+    transition: transform 0.5s ease-in-out;
+    border: none;
+    cursor: pointer;
+    width: 5rem;
+    text-align: center;
+}

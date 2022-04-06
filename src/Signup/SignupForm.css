@@ -23,7 +23,13 @@
   backdrop-filter: blur(8.5px);
   border-radius: 10px;
   color: #ffffff;
-  padding:2rem 5rem;
+  padding:1rem 3rem;
+}
+
+.form-link > a {
+    text-decoration: none;
+    color: #00dbde;
+
 }
 
 form{
@@ -37,7 +43,7 @@ form{
 form > input{   
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     border-radius: 2rem;
-    width: 95%;
+    width: 100%;
     height: 3rem;
     padding: 1rem;
     border: none;
@@ -53,4 +59,5 @@ form > #submitBtn {
     background: linear-gradient(to right, #00dbde, #fc00ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color:white;
     font-weight: 100;
+    cursor: pointer;
 }

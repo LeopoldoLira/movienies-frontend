@@ -23,21 +23,24 @@ const NavItem = (props) => {
 
 const DropdownMenu = () => {
 
-    let { logoutUser } = useContext(AuthContext)
-
-    return(
-        <div className='dropdown'>
-            <Link to='/' className="menu-item" onClick={logoutUser} >
-                 <span className='icon-button'>🚫</span> 
-                 <p>Logout</p>
-           </Link>
-           <Link to='/' className="menu-item" >
-                 <span className='icon-button'>🎬</span> 
-                 <p>My List</p>
-           </Link>
-        </div>
-    )
-}
+    let { logoutUser, isStaff } = useContext(AuthContext)
+        return(
+            <div className='dropdown'>
+                <Link to='/' className="menu-item" onClick={logoutUser} >
+                     <span className='icon-button'>🚫</span> 
+                     <p>Logout</p>
+               </Link>
+               <Link to='/' className="menu-item" >
+                     <span className='icon-button'>🎬</span> 
+                     <p>My List</p>
+               </Link>
+               {isStaff.is_staff === true ? <Link to='/admin' className="menu-item" >
+                     <span className='icon-button'>🎬</span> 
+                     <p>Movies</p>
+               </Link> : null}
+            </div>
+        )
+    }
 
 
 const NavBar = () => {

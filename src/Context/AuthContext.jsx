@@ -12,6 +12,7 @@ export const AuthProvider = ({children}) => {
 
     let [authTokens, setAuthTokens] = useState(()=>localStorage.getItem('authTokens') ? (JSON.parse(localStorage.getItem('authTokens'))) : (null))
     let [userProfile, setUserProfile] = useState('')
+    let [isStaff, setIsStaff] = useState('')
 
 
     let LoginUrl = `${process.env.REACT_APP_API_DOMAIN}/auth/jwt/create`
@@ -56,6 +57,7 @@ export const AuthProvider = ({children}) => {
         if(response.status === 200){
             setUserProfile(userData)
             localStorage.setItem('username', JSON.stringify(userData.username))
+            setIsStaff(userData)
         }else {
             console.log('Unable to retrieve user')
         }
@@ -67,6 +69,7 @@ export const AuthProvider = ({children}) => {
     let logoutUser = () => {
         setAuthTokens(null)
         setUserProfile(null)
+        setIsStaff(null)
         localStorage.removeItem('authTokens')
         localStorage.removeItem('username')
         navigate('/')
@@ -78,6 +81,7 @@ export const AuthProvider = ({children}) => {
         userProfile:userProfile,
         userNameProfile: userNameProfile,
         authTokens:authTokens,
+        isStaff:isStaff,
         loginUser:loginUser,
         retrieveUserName: retrieveUserName,
         logoutUser: logoutUser

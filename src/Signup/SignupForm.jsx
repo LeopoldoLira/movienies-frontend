@@ -50,6 +50,7 @@ const SignupForm = () => {
                 <input type='text' name='lastnamesignup' placeholder='Last name here...' />
                 <input id='submitBtn' type='submit' value='Sign up' />
             </form>
+            <p className='form-link'>Already have an account? <Link to='/login'>Log in</Link> here!</p>
        </div>
     </div>  
   )

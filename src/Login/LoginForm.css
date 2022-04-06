@@ -24,7 +24,7 @@
   backdrop-filter: blur(8.5px);
   border-radius: 10px;
   color: #ffffff;
-  padding:3rem 5rem;
+  padding:3rem 3rem;
 }
 
 form{
@@ -54,4 +54,13 @@ background: -webkit-linear-gradient(to right, #00dbde, #fc00ff);  /* Chrome 10-2
 background: linear-gradient(to right, #00dbde, #fc00ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 color:white;
 font-weight: 100;
+cursor: pointer;
+}
+
+.navigation-logo > a{
+    transition: color 500ms ease-in-out;
+}
+
+.navigation-logo > a:hover{
+    color:#00dbde;
 }

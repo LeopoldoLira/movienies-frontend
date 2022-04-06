@@ -33,6 +33,7 @@ const MovieContainer = () => {
 
     return (
         <div className='main-movie-container'>
+            <p className='movie-container-title'>Top Movies:</p>
             <div className='movie-container'>
             {movie.map((x)=>{
                 return(

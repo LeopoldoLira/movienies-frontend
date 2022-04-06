@@ -1,13 +1,18 @@
-import { Navigate } from 'react-router-dom'
 import { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import AuthContext from '../Context/AuthContext'
 
 const PrivateAuthroute = ({children}) => {
     
-    let {user} = useContext(AuthContext)
+    let { isStaff } = useContext(AuthContext)
     
   return (
-        user ?  <Navigate to=''/> : children
+        isStaff.is_staff === true ?  children : 
+        <div className='unauthorized'>
+          <p>Oops!</p>
+          <p>You don't have permission to see this page.</p>
+          <Link to='/' >Take me home</Link>
+        </div>
   )
 }
 
