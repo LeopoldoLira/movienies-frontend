@@ -4,7 +4,7 @@
     justify-content: center;
     position:fixed;
     width: 100%;
-    padding-top: 35vh;
+    padding-top: 40vh;
     
 }
 
@@ -17,14 +17,11 @@
     flex-direction: column;
     gap: 2rem;
     animation: appear ease 1s;
-    background: rgba(73, 72, 72, 0.25);
-    box-shadow: 0 8px 32px 0 rgba(230, 111, 111, 0.37);
-    backdrop-filter: blur( 5px );
-    -webkit-backdrop-filter: blur( 5px );
+    background: rgb(255, 255, 255);
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     border-radius: 1rem;
-    color: var(--text-color);
+    color: var(--bg);
 }
 
 
@@ -53,9 +50,9 @@
 
 #yes-button{
     padding: 1rem 1.5rem;
-    background-color: #00a31ba4;
+    background-color: #00a31b;
     border-radius: 5rem;
-    color: var(--text-color);
+    color: white;
     font-size: 1.2em;
     font-weight: 700;
     transition: transform 0.5s ease-in-out;
@@ -67,9 +64,9 @@
 #no-button{
     text-decoration: none;
     padding: 1rem 1.5rem;
-    background-color: #bb00009a;
+    background-color: #bb0000;
     border-radius: 5rem;
-    color: var(--text-color);
+    color: white;
     font-size: 1.2em;
     font-weight: 700;
     transition: transform 0.5s ease-in-out;
