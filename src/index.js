@@ -14,6 +14,7 @@ import UpdateMovieForm from "./UpdateMovieForm/UpdateMovieForm";
 
 import AdminMovieContainer from "./AdminMovieContainer/AdminMovieContainer";
 import AdminDeleteMovie from "./AdminDeleteMovie/AdminDeleteMovie";
+import MovieFavourite from "./MovieFavourite/MovieFavourite";
 // import PrivateAuthroute from './utils/PrivateAuthroute';
 
 ReactDOM.render(
@@ -41,6 +42,7 @@ ReactDOM.render(
             element={<UpdateMovieForm />}
           />
           <Route path="admin/movie/delete/:pk" element={<AdminDeleteMovie />} />
+          <Route path="movie/favourite/" element={<MovieFavourite />} />
         </Routes>
       </AuthProvider>
     </BrowserRouter>

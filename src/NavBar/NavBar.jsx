@@ -30,7 +30,7 @@ const DropdownMenu = () => {
                      <span className='icon-button'>🚫</span> 
                      <p>Logout</p>
                </Link>
-               <Link to='/' className="menu-item" >
+               <Link to='/movie/favourite' className="menu-item" >
                      <span className='icon-button'>🎬</span> 
                      <p>My List</p>
                </Link>
