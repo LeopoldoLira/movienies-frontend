@@ -47,6 +47,7 @@ const MovieFavourite = () => {
           let data = await response.json()
       
           if (response.status === 200) {
+            setFav( fav.filter ( item => item.id !== movieId.id))
             alert('Movie successfully deleted.')
           } else {
             alert("Movie not deleted.", data);

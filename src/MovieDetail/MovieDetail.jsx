@@ -2,11 +2,17 @@ import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import NavBar from '../NavBar/NavBar'
 import './MovieDetail.css'
+import RateDialog from './RateDialog'
+
 
 const MovieDetail = () => {
     
     const {pk} = useParams()
     const [movieDetail, setMovieDetail] = useState([])
+
+
+    const [isOpen, setIsOpen] = useState(false);
+
     let navigate = useNavigate()        
     
     useEffect(()=>{
@@ -56,6 +62,7 @@ const MovieDetail = () => {
     }
 }
 
+
   return (
     <>
     <NavBar />
@@ -66,11 +73,14 @@ const MovieDetail = () => {
                 </div>
                 <div className='movie-detail-container-info'>
                     <p className='movie-title'>{movieDetail.movie_title}</p>
-                    <p className='movie-release'>{movieDetail.movie_released_date}</p>
-                    <p className='movie-genre'>{movieDetail.movie_genre}</p>
-                    <p className='movie-plot'>{movieDetail.movie_plot}</p>
-                    <button onClick={()=> addFavourite(movieDetail.pk)}>Add to favourites.</button>
-                    <button onClick={()=> console.log(movieDetail.pk)} >what?</button>
+                    <p className='movie-release'>Release year: {movieDetail.movie_released_date}</p>
+                    <p className='movie-genre'>Genre: {movieDetail.movie_genre}</p>
+                    <p className='movie-plot'>Plot: {movieDetail.movie_plot}</p>
+                    <p>Audience Score: {movieDetail.movie_score}%</p>
+                    <button className='rounded-full bg-[#1da1f2] text-white favourite-button' onClick={()=> addFavourite(movieDetail.pk)}>Add to favourites.</button>
+                    
+                    
+                    <RateDialog isOpen={isOpen} setIsOpen={setIsOpen} />
                 </div>
             </div>
         </div>

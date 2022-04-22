@@ -12,13 +12,19 @@
     justify-content: center;
 }
 
+@media screen and (max-width:768px){
+    .login-form-container{
+        width: 60vw;
+    }
+}
+
 .login-form-container{
   display: flex; 
   align-items: center;
   flex-direction: column;
   gap:1em;
-  height: 80vh;
-  width: 30vw;
+  min-height: 80vh;
+  width: 70vw;
   background: rgba(255, 255, 255, 0.15);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(8.5px);

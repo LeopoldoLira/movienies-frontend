@@ -1,12 +1,16 @@
 .movie-detail-main-container{
     padding: 15vh 5rem;
     background: #3a3b3c;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .movie-detail-container{
     display: flex;
     color:white
+}
+
+.movie-detail-container-img{
+    width: 50%;
 }
 
 .movie-detail-container-img > img {
@@ -29,3 +33,7 @@
     font-weight: 700;
 }
 
+
+.favourite-button{
+    width: 10rem;
+}

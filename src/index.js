@@ -15,7 +15,7 @@ import UpdateMovieForm from "./UpdateMovieForm/UpdateMovieForm";
 import AdminMovieContainer from "./AdminMovieContainer/AdminMovieContainer";
 import AdminDeleteMovie from "./AdminDeleteMovie/AdminDeleteMovie";
 import MovieFavourite from "./MovieFavourite/MovieFavourite";
-// import PrivateAuthroute from './utils/PrivateAuthroute';
+import PrivateAuthroute from './utils/PrivateAuthroute';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -33,7 +33,7 @@ ReactDOM.render(
           <Route path="movie/:pk" element={<MovieDetail />} />
           <Route
             path="admin"
-            element={/*<PrivateAuthroute>*/ <Admin /> /*</PrivateAuthroute>*/}
+            element={<PrivateAuthroute> <Admin /> </PrivateAuthroute>}
           />
           <Route path="admin/movie/:pk" element={<AdminMovieContainer />} />
           <Route path="admin/movieform/" element={<MovieForm />} />
